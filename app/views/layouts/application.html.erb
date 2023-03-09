@@ -1,20 +1,44 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--  <head>-->
+<!--    <title>UserManagement</title>-->
+<!--    <meta name="viewport" content="width=device-width,initial-scale=1">-->
+    <%#= csrf_meta_tags %>
+    <%#= csp_meta_tag %>
+
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!--  </head>-->
+
+<!--  <body>-->
+    <%#= render 'layouts/navbar' %>
+<!--    <p class="notice"><%#= notice %></p>-->
+<!--    <p class="alert"><%#= alert %></p>-->
+    <%#= yield %>
+    <%#= button_to 'Logout', destroy_user_session_path, method: :delete %>
+<!--  </body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>UserManagement</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>UserHub</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- Warning !! ensure that "stylesheet_pack_tag" is used, line below -->
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <% if user_signed_in? %>
     <%= render 'layouts/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% end %>
+  <div class="container mt-4">
     <%= yield %>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
-  </body>
+  </div>
+</body>
 </html>

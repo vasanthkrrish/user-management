@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :timeoutable
   before_save :skip_confirmation
   after_save :confirm_user
+  scope :users, -> { where(admin: false) }
+
+  validates :email, :username, presence: true
 
   def skip_confirmation
     skip_confirmation_notification!
@@ -19,5 +22,11 @@ class User < ApplicationRecord
     resource.reset_password_sent_at = Time.now.utc
     resource.save!
     raw
+  end
+
+  protected
+
+  def password_required?
+    false
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_09_003101) do
+ActiveRecord::Schema.define(version: 2023_03_09_103332) do
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 2023_03_09_003101) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "contact"
+    t.string "company"
+    t.text "company_address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
