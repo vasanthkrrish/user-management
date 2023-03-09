@@ -46,8 +46,8 @@
       <div class="form-group row pt-2">
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
-          <%= link_to 'Back', root_path, class: 'btn btn-outline-secondary' %>
           <%= link_to 'Edit User', edit_user_path, class: 'btn btn-primary' %>
+          <%= link_to 'Delete User', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </div>
       </div>
     <% end %>

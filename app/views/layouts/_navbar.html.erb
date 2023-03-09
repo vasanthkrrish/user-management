@@ -1,19 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <span class="navbar-brand">UserHub</span>
-    <%#= link_to 'UserHub', root_path, class: 'navbar-brand' %>
+    <%= link_to 'UserHub', root_path, class: 'navbar-brand' %>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <% if current_user.admin? %>
           <li class="nav-item">
-            <%= link_to root_path, class: 'nav-link' do %>
-              <i class="fa fa-home"></i>
-            <% end %>
+            <%= link_to 'Home', root_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to new_user_path, class: 'nav-link' do %>
-              <i class="fa fa-user-plus"></i>
-            <% end %>
+            <%= link_to 'Create User', new_user_path, class: 'nav-link' %>
           </li>
         <% end %>
       </ul>

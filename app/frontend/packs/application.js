@@ -9,7 +9,14 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '../js/bootstrap_js_files.js'
 import "@fortawesome/fontawesome-free/css/all"
+import "jquery"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).ready(function () {
+    $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
+        $(".alert-dismissible").alert('close');
+    });
+});
