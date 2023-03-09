@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_admin!, except: :show
+  before_action :authenticate_user!, only: :show
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
