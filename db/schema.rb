@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2023_03_09_103332) do
     t.string "contact"
     t.string "company"
     t.text "company_address"
-    t.text "auth_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

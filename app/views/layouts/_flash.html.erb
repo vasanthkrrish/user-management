@@ -1,11 +1,6 @@
-<% if notice %>
-  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-    <%= notice %>
-  </div>
-<% end %>
-
-<% if alert %>
-  <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-    <%= alert %>
+<% flash.each do |type, message| %>
+  <div data-controller="notification">
+    <input data-notification-target="type" value="<%= type %>" type="hidden">
+    <input data-notification-target="message" value="<%= message %>" type="hidden">
   </div>
 <% end %>

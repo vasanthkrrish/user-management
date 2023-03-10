@@ -37,8 +37,8 @@
   <% if user_signed_in? %>
     <%= render 'layouts/navbar' %>
   <% end %>
-  <%= render 'layouts/flash' %>
   <div class="container mt-4">
+    <%= render 'layouts/flash' %>
     <%= yield %>
   </div>
 </body>

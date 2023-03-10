@@ -937,6 +937,11 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@hotwired/stimulus@>=3.0.0", "@hotwired/stimulus@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.1.tgz#e3de23623b0c52c247aba4cd5d530d257008676b"
+  integrity sha512-HGlzDcf9vv/EQrMJ5ZG6VWNs8Z/xMN+1o2OhV1gKiSG6CqZt5MCBB1gRg5ILiN3U0jEAxuDTNPRfBcnZBDmupQ==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"
@@ -1018,10 +1023,10 @@
   dependencies:
     spark-md5 "^3.0.0"
 
-"@rails/ujs@^6.0.0":
-  version "6.1.7"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.7.tgz#b09dc5b2105dd267e8374c47e4490240451dc7f6"
-  integrity sha512-0e7WQ4LE/+LEfW2zfAw9ppsB6A8RmxbdAUPAF++UT80epY+7emuQDkKXmaK0a9lp6An50RvzezI0cIQjp1A58w==
+"@rails/ujs@^7.0.4-2":
+  version "7.0.4-2"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.4-2.tgz#62b108cc297c0c60f415720295673ee73f08e210"
+  integrity sha512-ec6e2+YSfg4DgrVzIYzpo7ayze6dOu+lZ6RsIR+COkuZCp2QGMEyHZQzNdHt065FjCtpv6wRZQIybAtWrzPqlQ==
 
 "@rails/webpacker@5.4.4":
   version "5.4.4"
@@ -3433,6 +3438,11 @@ homedir-polyfill@^1.0.1:
   dependencies:
     parse-passwd "^1.0.0"
 
+hotkeys-js@>=3:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.10.1.tgz#0c67e72298f235c9200e421ab112d156dc81356a"
+  integrity sha512-mshqjgTqx8ee0qryHvRgZaZDxTwxam/2yTQmQlqAWS3+twnq1jsY9Yng9zB7lWq6WRrjTbTOc7knNwccXQiAjQ==
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"
@@ -4588,6 +4598,11 @@ normalize-url@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+
+noty@^3.2.0-beta-deprecated:
+  version "3.2.0-beta-deprecated"
+  resolved "https://registry.yarnpkg.com/noty/-/noty-3.2.0-beta-deprecated.tgz#f74126808b40ba11d7cea3eefc836b32ff7a30f2"
+  integrity sha512-ntRbHuQ9SnnnVFZm/oq5L1DBCaHQUvsU24AwZH3PGjAWx2YqR/IhOadMk11vmJovYiQo00oqTj6Hp+D6PGtmLA==
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -6417,6 +6432,20 @@ statuses@2.0.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
 
+stimulus-notification@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/stimulus-notification/-/stimulus-notification-2.2.0.tgz#4e950ad90558617e4598d152b6fcd2635287a5bb"
+  integrity sha512-i1Z5IHDuMzwrRxnjqaftQcIseybouMiKfiC0aeFvoznXOo14gx7LWE5a8lssbQJQhbTcxq1RSVOKztkcmrKxng==
+  dependencies:
+    stimulus-use "^0.51.1"
+
+stimulus-use@^0.51.1:
+  version "0.51.3"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.51.3.tgz#d7ac671aff8d0db253296dec89d38aa6f4b27e2a"
+  integrity sha512-V4YETxMFL4/bpmcqlwFtaOaJg9sLF+XlWsvXrsoWVA5jffsqe7uAvV6gGPPQta7Hgx01vovA0yNsWUe2eU9Jmw==
+  dependencies:
+    hotkeys-js ">=3"
+
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"
@@ -6575,6 +6604,13 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+tailwindcss-stimulus-components@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/tailwindcss-stimulus-components/-/tailwindcss-stimulus-components-3.0.4.tgz#598a880aed1a4966c2bf85fcc9c65fb63d02d2f0"
+  integrity sha512-kv4CHEcTvZSmthV6PseSdnW/QqKh237fZrvbNKNhWeYsTuEnOrKvdbR+3CmpuTok7L4XgEXk+XOFfo7AMhhtAA==
+  dependencies:
+    "@hotwired/stimulus" ">=3.0.0"
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"

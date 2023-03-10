@@ -10,10 +10,12 @@ import "channels"
 import '../js/bootstrap_js_files.js'
 import "@fortawesome/fontawesome-free/css/all"
 import "jquery"
+import '../js/controllers'
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+global.Rails = Rails;
 
 $(document).ready(function () {
     $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
