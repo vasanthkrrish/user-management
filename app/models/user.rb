@@ -6,7 +6,7 @@ class User < ApplicationRecord
   after_save :confirm_user
   scope :users, -> { where(admin: false) }
 
-  validates :email, :username, presence: true
+  validates :email, :username, presence: true, uniqueness: true
 
   def skip_confirmation
     skip_confirmation_notification!

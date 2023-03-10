@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_resetting_password_path_for(resource)
-    new_user_session_path
+    new_session_path(User)
   end
 end

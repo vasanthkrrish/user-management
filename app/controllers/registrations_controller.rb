@@ -8,10 +8,11 @@ class RegistrationsController < Devise::RegistrationsController
       token = User.generate_password_token(@user.reload)
       UserMailer.confirmation_instructions(@user, token).deliver_now
       flash[:notice] = 'User successfully created'
-      redirect_to root_path
+      redirect_to @user
     else
-      @messages = @user.errors.full_messages.join(', ')
+      @messages = @user.errors.full_messages.uniq.join(', ')
       flash[:error] = @messages
+      redirect_to new_user_path
     end
   end
 
