@@ -1,24 +1,32 @@
-# README
+## UserHub
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### About The Project
 
-Things you may want to cover:
+UserHub is a web-based user management application designed to simplify the process of managing users for businesses and organizations. With UserHub, administrators can easily create, edit, and delete user accounts.
 
-* Ruby version
+### Built With
 
-* System dependencies
+* Ruby on Rails
+* Stimulus Js
 
-* Configuration
+### Installation
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Use ruby 3.0.4 version.
+* Checkout to user_management repo to start the project.
+  ```sh
+  git fetch
+  git checkout user_management
+  ```
+* Rub bundle to install all required gem packages
+  ```sh
+  bundle install
+  ```
+* Rub yarn to install required js packages
+  ```sh
+  yarn
+  ```
+* Prepare database by
+  ```sh
+  rails db:reset
+  ```
+  The seed will provide you credentials for admin user.
