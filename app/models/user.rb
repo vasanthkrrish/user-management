@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable, :timeoutable
   before_save :skip_confirmation
   after_save :confirm_user
-  scope :users, -> { where(admin: false) }
+  scope :users, -> { where(admin: false).order(updated_at: :desc) }
 
   validates :email, :username, presence: true, uniqueness: true
 
