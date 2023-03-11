@@ -1,16 +1,21 @@
-<div id="grid-container" class="ag-theme-alpine" style="height: calc(100vh - 120px);"></div>
+<div id="grid-container" class="ag-theme-alpine" style="height: calc(100vh - 150px);"></div>
+<div class="card">
+  <div class="card-header" style="font-size: small;">
+    <span style="font-weight: lighter;">Total Rows: </span><span style="font-weight: bold"><%= @count %></span>
+  </div>
+</div>
 <script type="text/javascript">
-    const gridOptions = {
+    var gridOptions = {
         animateRows: true,
         onRowClicked: params => {
-            const id = params.data.id;
+            var id = params.data.id;
             window.location.href = `users/${id}`;
         }
     };
-    const gridElement = document.querySelector('#grid-container');
-    const grid = new agGrid.Grid(gridElement, gridOptions);
+    var gridElement = document.querySelector('#grid-container');
+    var grid = new agGrid.Grid(gridElement, gridOptions);
 
-    const gridApi = gridOptions.api;
+    var gridApi = gridOptions.api;
     $.ajax({
         url: '/api/v1/users/grid_data',
         dataType: 'json',
