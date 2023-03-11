@@ -31,6 +31,12 @@
 </html>
 <script type="text/javascript">
     var gridOptions = {
+        defaultColDef: {
+            filter: true,
+            sortable: true,
+            floatingFilter: true,
+            resizable: true
+        },
         animateRows: true,
         onRowClicked: params => {
             var id = params.data.id;

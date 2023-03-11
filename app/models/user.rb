@@ -25,14 +25,15 @@ class User < ApplicationRecord
   end
 
   def self.grid_data
-    columns = [
+    [
       {
         headerName: 'User Name',
         field: 'username'
       },
       {
         headerName: 'Email',
-        field: 'email'
+        field: 'email',
+        minWidth: 300
       },
       {
         headerName: 'First Name',
@@ -55,11 +56,6 @@ class User < ApplicationRecord
         field: 'company_address'
       }
     ]
-    columns.each do |i|
-      i['filter'] = true
-      i['sortable'] = true
-      i['floatingFilter'] = true
-    end
   end
 
   def as_json(opts = {})
