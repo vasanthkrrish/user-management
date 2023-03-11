@@ -8,6 +8,7 @@ UserHub is a web-based user management application designed to simplify the proc
 
 * Ruby on Rails
 * Stimulus Js
+* AG Grid
 
 ### Installation
 
