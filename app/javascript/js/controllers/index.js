@@ -5,7 +5,9 @@
 import { Application } from '@hotwired/stimulus'
 import FormController from "./form_controller"
 import NotificationController from "./notification_controller"
+import ExistsController from "./exists_controller"
 
 const application = Application.start()
 application.register("form", FormController)
 application.register("notification", NotificationController)
+application.register("exists", ExistsController)

@@ -4,7 +4,7 @@ import 'noty/src/noty.scss'
 import 'noty/src/themes/bootstrap-v4.scss'
 
 export default class extends Controller {
-    static targets = ['form'];
+    static targets = ['form', 'email', 'username'];
 
     submitForm(event) {
         if (event.target.type === 'submit') {
@@ -41,6 +41,38 @@ export default class extends Controller {
             if (!isValid) {
                 event.preventDefault();
             }
+        }
+    }
+
+    checkEmail() {
+        const element = this.emailTarget;
+        this.checkField(element);
+    }
+
+    checkUserName() {
+        const element = this.usernameTarget;
+        this.checkField(element);
+    }
+
+    checkField(element) {
+        const value = element.value;
+        const field = element.title === 'Email' ? 'email' : 'username';
+        if (value) {
+            $.ajax({
+                url: `/api/v1/users/check_field?${field}=${value}`,
+                dataType: 'json',
+                success: function(data) {
+                    if (data) {
+                        new Noty({
+                            text: `${element.title} has already taken`,
+                            type: 'error',
+                            theme: 'bootstrap-v4',
+                            progressBar: true,
+                            timeout: 3000,
+                        }).show();
+                    }
+                }
+            });
         }
     }
 

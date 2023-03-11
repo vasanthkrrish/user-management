@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: :index do
         get 'grid_data', on: :collection
+        get 'check_field', on: :collection
       end
     end
   end
