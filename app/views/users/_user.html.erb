@@ -52,6 +52,7 @@
         <div class="col-sm-10">
           <%= link_to 'Edit User', edit_user_path, class: 'btn btn-primary' %>
           <%= link_to 'Delete User', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <%= link_to 'Send Password Instructions', reset_password_user_path, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %>
         </div>
       </div>
     <% end %>

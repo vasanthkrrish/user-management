@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_admin!, except: :info
   before_action :authenticate_user!, only: :info
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[show edit update destroy reset_password]
 
   # GET /users or /users.json
   def index
@@ -59,6 +59,13 @@ class UsersController < ApplicationController
   end
 
   def info; end
+
+  def reset_password
+    token = User.generate_password_token(@user.reload)
+    UserMailer.confirmation_instructions(@user, token).deliver_now
+    flash[:notice] = 'Reset password sent successfully'
+    render 'show'
+  end
 
   private
 

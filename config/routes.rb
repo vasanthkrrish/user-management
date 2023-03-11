@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users do
     get 'info', on: :collection
+    get 'reset_password', on: :member
   end
   namespace :api do
     namespace :v1 do
