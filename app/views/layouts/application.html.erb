@@ -38,21 +38,23 @@
         }
     };
     var gridElement = document.querySelector('#grid-container');
-    var grid = new agGrid.Grid(gridElement, gridOptions);
+    if (gridElement) {
+        var grid = new agGrid.Grid(gridElement, gridOptions);
 
-    var gridApi = gridOptions.api;
-    $.ajax({
-        url: '/api/v1/users/grid_data',
-        dataType: 'json',
-        success: function(data) {
-            gridApi.setColumnDefs(data.columns);
-        }
-    });
-    $.ajax({
-        url: '/api/v1/users',
-        dataType: 'json',
-        success: function(data) {
-            gridApi.setRowData(data.users);
-        }
-    });
+        var gridApi = gridOptions.api;
+        $.ajax({
+            url: '/api/v1/users/grid_data',
+            dataType: 'json',
+            success: function(data) {
+                gridApi.setColumnDefs(data.columns);
+            }
+        });
+        $.ajax({
+            url: '/api/v1/users',
+            dataType: 'json',
+            success: function(data) {
+                gridApi.setRowData(data.users);
+            }
+        });
+    }
 </script>
