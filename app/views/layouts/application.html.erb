@@ -35,7 +35,8 @@
         onRowClicked: params => {
             var id = params.data.id;
             window.location.href = `users/${id}`;
-        }
+        },
+        overlayLoadingTemplate: '<span class="ag-overlay-loading-center">Please wait while data is loading</span>'
     };
     var gridElement = document.querySelector('#grid-container');
     if (gridElement) {
