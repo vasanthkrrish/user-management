@@ -35,10 +35,6 @@ class User < ApplicationRecord
         field: 'email'
       },
       {
-        headerName: 'User Name',
-        field: 'username'
-      },
-      {
         headerName: 'First Name',
         field: 'first_name'
       },
