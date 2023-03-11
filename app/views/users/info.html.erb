@@ -1,1 +1,8 @@
-<%= render 'user', user: current_user %>
+<div class="card">
+  <div class="card-header">
+    <h4>Welcome <%= current_user.username %></h4>
+  </div>
+  <div class="card-body">
+    <%= render 'user', user: current_user %>
+  </div>
+</div>
