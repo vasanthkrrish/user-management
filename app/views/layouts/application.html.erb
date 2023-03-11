@@ -29,3 +29,30 @@
   </div>
 </body>
 </html>
+<script type="text/javascript">
+    var gridOptions = {
+        animateRows: true,
+        onRowClicked: params => {
+            var id = params.data.id;
+            window.location.href = `users/${id}`;
+        }
+    };
+    var gridElement = document.querySelector('#grid-container');
+    var grid = new agGrid.Grid(gridElement, gridOptions);
+
+    var gridApi = gridOptions.api;
+    $.ajax({
+        url: '/api/v1/users/grid_data',
+        dataType: 'json',
+        success: function(data) {
+            gridApi.setColumnDefs(data.columns);
+        }
+    });
+    $.ajax({
+        url: '/api/v1/users',
+        dataType: 'json',
+        success: function(data) {
+            gridApi.setRowData(data.users);
+        }
+    });
+</script>
