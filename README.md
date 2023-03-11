@@ -30,3 +30,8 @@ UserHub is a web-based user management application designed to simplify the proc
   rails db:reset
   ```
   The seed will provide you credentials for admin user.
+  
+* To load test ag-grid, run below task and check index page
+  ```sh
+  rake users:load
+  ```
