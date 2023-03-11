@@ -12,7 +12,7 @@ export default class extends Controller {
             type: this.getNotificationType(),
             theme: 'bootstrap-v4',
             progressBar: true,
-            timeout: 5000,
+            timeout: 3000,
         }).show()
     }
 

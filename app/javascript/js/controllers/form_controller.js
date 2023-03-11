@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 import Noty from 'noty';
 import 'noty/src/noty.scss'
-import 'noty/src/themes/mint.scss'
+import 'noty/src/themes/bootstrap-v4.scss'
 
 export default class extends Controller {
     static targets = ['form'];
@@ -22,7 +22,7 @@ export default class extends Controller {
                     }
                 }
             }
-            if (email) {
+            if (email && email.required) {
                 const emailValid = this.validateEmail(email.value);
                 if (!emailValid) {
                     this.notify('Provide valid email address');
@@ -55,7 +55,9 @@ export default class extends Controller {
             // For each required field, check to see if the value is empty
             // if so, we focus the field and set our value to false
             if (!field.disabled && !field.value.trim()) {
-                console.log(field)
+                if (field.title && field.type !== "email") {
+                    this.notify(field.title + ' can not be blank');
+                }
                 field.focus();
 
                 isValid = false;
@@ -93,9 +95,9 @@ export default class extends Controller {
         new Noty({
             text: str,
             type: 'error',
-            theme: 'mint',
+            theme: 'bootstrap-v4',
             progressBar: true,
-            timeout: 5000,
+            timeout: 3000,
         }).show();
     }
 }

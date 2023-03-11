@@ -3,8 +3,9 @@
     <h3>Change password</h3>
   </div>
   <div class="card-body mt-3 mb-5">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put },
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name),
                  html: {
+                   method: :put,
                    novalidate: true
                  },
                  data: {
