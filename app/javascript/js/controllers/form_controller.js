@@ -92,7 +92,7 @@ export default class extends Controller {
     }
 
     notify(str) {
-        new Noty({
+        new ({
             text: str,
             type: 'error',
             theme: 'bootstrap-v4',

@@ -1,42 +1,28 @@
-<% if current_user.admin? %>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Name</th>
-      <th>Contact</th>
-      <th>Company</th>
-      <th>Company Address</th>
-      <th colspan="2"></th>
-    </tr>
-    </thead>
+<div id="grid-container" class="ag-theme-alpine" style="height: calc(100vh - 120px);"></div>
+<script type="text/javascript">
+    const gridOptions = {
+        animateRows: true,
+        onRowClicked: params => {
+            const id = params.data.id;
+            window.location.href = `users/${id}`;
+        }
+    };
+    const gridElement = document.querySelector('#grid-container');
+    const grid = new agGrid.Grid(gridElement, gridOptions);
 
-    <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td>
-          <%= link_to user.username, user %>
-        </td>
-        <td><%= user.email %></td>
-        <td><%= [user.first_name, user.last_name].join(' ') %></td>
-        <td><%= user.contact %></td>
-        <td><%= user.company %></td>
-        <td><%= user.company_address %></td>
-        <td>
-          <%= link_to edit_user_path(user) do %>
-            <i class="fa fa-pencil"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa fa-remove"></i>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-<% else %>
-
-<% end %>
+    const gridApi = gridOptions.api;
+    $.ajax({
+        url: '/api/v1/users/grid_data',
+        dataType: 'json',
+        success: function(data) {
+            gridApi.setColumnDefs(data.columns);
+        }
+    });
+    $.ajax({
+        url: '/api/v1/users',
+        dataType: 'json',
+        success: function(data) {
+            gridApi.setRowData(data.users);
+        }
+    });
+</script>

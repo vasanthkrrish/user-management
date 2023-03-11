@@ -24,6 +24,52 @@ class User < ApplicationRecord
     raw
   end
 
+  def self.grid_data
+    columns = [
+      {
+        headerName: 'User Name',
+        field: 'username'
+      },
+      {
+        headerName: 'Email',
+        field: 'email'
+      },
+      {
+        headerName: 'User Name',
+        field: 'username'
+      },
+      {
+        headerName: 'First Name',
+        field: 'first_name'
+      },
+      {
+        headerName: 'Last Name',
+        field: 'last_name'
+      },
+      {
+        headerName: 'Contact',
+        field: 'contact'
+      },
+      {
+        headerName: 'Company',
+        field: 'company'
+      },
+      {
+        headerName: 'Company Address',
+        field: 'company_address'
+      }
+    ]
+    columns.each do |i|
+      i['filter'] = true
+      i['sortable'] = true
+      i['floatingFilter'] = true
+    end
+  end
+
+  def as_json(opts = {})
+    super(opts.merge(only: %i[id username email first_name last_name contact company company_address]))
+  end
+
   protected
 
   def password_required?
